@@ -1,11 +1,13 @@
 package com.accenture.surfershells.International_Stock_Analysis;
 
+import java.sql.Date;
+
 public class PriceOnDate {
 	
 	private Integer id;
 	private String name;
 	private Double price;
-	private String date;
+	private Date onDate;
 	
 	public Integer getId() {
 		return id;
@@ -25,11 +27,11 @@ public class PriceOnDate {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-	public String getDate() {
-		return date;
+	public Date getDate() {
+		return onDate;
 	}
-	public void setDate(String date) {
-		this.date = date;
+	public void setDate(Date date) {
+		this.onDate = date;
 	}
 	
 	
