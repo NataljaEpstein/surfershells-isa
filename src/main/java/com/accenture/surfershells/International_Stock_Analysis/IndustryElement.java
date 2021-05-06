@@ -1,6 +1,6 @@
 package com.accenture.surfershells.International_Stock_Analysis;
 
-public class Industry {
+public class IndustryElement {
 	
 	private Integer id;
 	private String name;

@@ -2,7 +2,7 @@ package com.accenture.surfershells.International_Stock_Analysis;
 
 import java.sql.Date;
 
-public class PriceOnDate {
+public class PriceOnDateElement {
 	
 	private Integer id;
 	private String name;

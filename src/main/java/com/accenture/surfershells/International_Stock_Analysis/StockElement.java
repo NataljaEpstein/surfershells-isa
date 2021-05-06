@@ -16,8 +16,6 @@ public class StockElement {
 			this.industryName = industryName;
 			this.price = price.replaceAll("[€]", "EUR").replace(",", ".");
 			this.priceDate = LocalDate.parse(priceDate, DateTimeFormatter.ofPattern("dd.MM.yy").withLocale(Locale.GERMAN));
-			
-			return;
 		}
 
 		public String getStockName() {

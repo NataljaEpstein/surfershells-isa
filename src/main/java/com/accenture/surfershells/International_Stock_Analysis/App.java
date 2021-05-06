@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.accenture.surfershells.International_Stock_Analysis_Commandos.ExitCommando;
-import com.accenture.surfershells.International_Stock_Analysis_Commandos.ImportCsv;
+import com.accenture.surfershells.International_Stock_Analysis_Commandos.ImportCsvVersuch1;
 import com.accenture.surfershells.International_Stock_Analysis_Commandos.SearchCommando3;
 
 public class App {
@@ -16,10 +16,15 @@ public class App {
 
 		try {
 			ArrayList<StockElement> stockElements = new ArrayList <StockElement>();
+			
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			String url = "jdbc:mysql://localhost:3306/international_stock_analysis";
 			Connection con = DriverManager.getConnection(url, "root", "Root");
+			
+			System.out.println("Database connection is successful.");
+			
 			Scanner scanner = new Scanner(System.in);
+			
 			System.out.println("Welcome to the Stock App! Please choose between the following commandos:");
 			System.out.println("");
 

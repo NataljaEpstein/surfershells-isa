@@ -9,17 +9,21 @@ import java.util.ArrayList;
 
 import com.accenture.surfershells.International_Stock_Analysis.StockElement;
 
-public class ImportCsv {
+public class ImportCsvVersuch1 {
 	
 	public Connection con;
 	
-	public ImportCsv (Connection con) {
+	public ImportCsvVersuch1 (Connection con) {
 		this.con = con;
 	}
 	
 	public ArrayList<StockElement> importCsv () throws SQLException{
 		Statement statement = con.createStatement();
+		statement.executeUpdate("INSERT INTO industry VALUES(?, ?);");
+		System.out.println("Record inserted successfully.");
+		
 		ResultSet resultSet = statement.executeQuery("SELECT * FROM stockELement");
+		
 		
 		ArrayList <StockElement> stockElements = new ArrayList<>();
 		
