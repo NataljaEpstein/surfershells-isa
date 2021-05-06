@@ -44,8 +44,9 @@ public class StockElement {
 		public void setPriceDate(LocalDate priceDate) {
 			this.priceDate = priceDate;
 		}
+
 		public String toString() {
 			return "StockElement [stockName=" + stockName + ", industryName=" + industryName + ", price=" + price
-					+ ", priceDate=" + priceDate + "]";			
+					+ ", priceDate=" + priceDate + "]";		
 		}
 	}

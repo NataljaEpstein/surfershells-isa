@@ -1,5 +1,5 @@
 package com.accenture.surfershells.International_Stock_Analysis_Commandos;
 
-public class Search extends Commando {
+public class LowID7 extends Commando {
 
 }

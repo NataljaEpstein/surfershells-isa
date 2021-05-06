@@ -6,7 +6,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.accenture.surfershells.International_Stock_Analysis_Commandos.ExitCommando;
 import com.accenture.surfershells.International_Stock_Analysis_Commandos.ImportCsv;
+import com.accenture.surfershells.International_Stock_Analysis_Commandos.SearchCommando3;
 
 public class App {
 	public static void main(String[] args) throws Exception {
@@ -15,7 +17,7 @@ public class App {
 		try {
 			ArrayList<StockElement> stockElements = new ArrayList <StockElement>();
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String url = "jdbc:mysql://localhost:3306/international_stock_analysis_db";
+			String url = "jdbc:mysql://localhost:3306/international_stock_analysis";
 			Connection con = DriverManager.getConnection(url, "root", "Root");
 			Scanner scanner = new Scanner(System.in);
 			System.out.println("Welcome to the Stock App! Please choose between the following commandos:");
@@ -27,7 +29,7 @@ public class App {
 			System.out.println(
 					"2. To delete STOCK_DATA.csv, please enter 'd' for delete.");
 			System.out.println(
-					"3. To search for the id of a company, please enter the first 3 characters of this company.");
+					"3. To search for the id of a company, please enter 's' and the first 3 characters of this company.");
 			System.out.println(
 					"4. To show you the last ten prices for a stock with a specific id, please enter 'show id'. Please replace id with the id number you are searching for.");
 			System.out.println(
@@ -47,6 +49,9 @@ public class App {
 			
 			String input = scanner.nextLine();
 			
+			new SearchCommando3(con).searchCommando(input, scanner, con);
+			new ExitCommando().exit(input, scanner);
+			
 			break;
 		}
 		System.out.println("");
@@ -58,6 +63,7 @@ public class App {
 	} catch (SQLException e) {
 		System.out.println("Please check driver url, account name and password.");// Logindaten richtig?
 	}
+		
 		// ImportCsv.importCsv("STOCK_DATA_test.csv");
 	}
 }
